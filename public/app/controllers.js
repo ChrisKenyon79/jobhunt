@@ -1,39 +1,39 @@
-angular.module('RecipeCtrls', ['RecipeServices'])
-.controller('HomeCtrl', ['$scope', 'Recipe', function($scope, Recipe) {
-  $scope.recipes = [];
+angular.module('JobCtrls', ['JobServices'])
+.controller('HomeCtrl', ['$scope', 'Job', function($scope, Job) {
+  $scope.job = [];
 
-  Recipe.query(function success(data) {
-    $scope.recipes = data;
+  Job.query(function success(data) {
+    $scope.job = data;
   }, function error(data) {
     console.log(data);
   });
 
-  $scope.deleteRecipe = function(id, recipesIdx) {
+  $scope.deleteJob = function(id, jobIdx) {
     Recipe.delete({ id: id }, function success(data) {
-      $scope.recipes.splice(recipesIdx, 1);
+      $scope.job.splice(jobIdx, 1);
     }, function error(data) {
       console.log(data);
     });
   };
 }])
-.controller('ShowCtrl', ['$scope', '$stateParams', 'Recipe', function($scope, $stateParams, Recipe) {
+.controller('ShowCtrl', ['$scope', '$stateParams', 'job', function($scope, $stateParams, Job) {
   $scope.recipe = {};
 
-  Recipe.get({ id: $stateParams.id }, function success(data) {
-    $scope.recipe = data;
+  Job.get({ id: $stateParams.id }, function success(data) {
+    $scope.job = data;
   }, function error(data) {
     console.log(data);
   });
 }])
-.controller('NewCtrl', ['$scope', '$location', 'Recipe', function($scope, $location, Recipe) {
-  $scope.recipe = {
+.controller('NewCtrl', ['$scope', '$location', 'Job', function($scope, $location, Job) {
+  $scope.job = {
     title: '',
     description: '',
     image: ''
   };
 
-  $scope.createRecipe = function() {
-    Recipe.save($scope.recipe, function success(data) {
+  $scope.createJob = function() {
+    Job.save($scope.job, function success(data) {
       $location.path('/');
     }, function error(data) {
       console.log(data);
