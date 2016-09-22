@@ -26,8 +26,21 @@
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "express-jwt": "^3.4.0",
-    "jsonwebtoken": "^7.1.6",
-    "mongoose": "^4.5.7",
+    "jsonwebtoken": "^7.1.9",
+    "mongoose": "^4.6.1",
     "morgan": "^1.7.0"
-  }
+  },
+  "description": "<<<<<<< HEAD #jobhunt ======= # jobhunt >>>>>>> 1b08b4de2ae22bbef5c407f3a66eaa88934140d6 d",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisKenyon79/jobhunt.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/ChrisKenyon79/jobhunt/issues"
+  },
+  "homepage": "https://github.com/ChrisKenyon79/jobhunt#readme"
 }
