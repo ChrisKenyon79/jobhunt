@@ -1,5 +1,5 @@
 var express = require('express');
-var Recipe = require('../models/recipe');
+var Job = require('../models/Job');
 var router = express.Router();
 
 router.route('/')
@@ -11,30 +11,30 @@ router.route('/')
     });
   })
   .post(function(req, res) {
-    Recipe.create(req.body, function(err, recipe) {
+    Job.create(req.body, function(err, recipe) {
       if (err) return res.status(500).send(err);
 
-      return res.send(recipe);
+      return res.send(job);
     });
   });
 
 router.route('/:id')
   .get(function(req, res) {
-    Recipe.findById(req.params.id, function(err, recipe) {
+    Job.findById(req.params.id, function(err, recipe) {
       if (err) return res.status(500).send(err);
 
-      return res.send(recipe);
+      return res.send(job);
     });
   })
   .put(function(req, res) {
-    Recipe.findByIdAndUpdate(req.params.id, req.body, function(err) {
+    Job.findByIdAndUpdate(req.params.id, req.body, function(err) {
       if (err) return res.status(500).send(err);
 
       return res.send({ message: 'success' });
     });
   })
   .delete(function(req, res) {
-    Recipe.findByIdAndRemove(req.params.id, function(err) {
+    Job.findByIdAndRemove(req.params.id, function(err) {
       if (err) return res.status(500).send(err);
 
       return res.send({ message: 'success' });
