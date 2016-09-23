@@ -4,14 +4,14 @@ var router = express.Router();
 
 router.route('/')
   .get(function(req, res) {
-    Recipe.find(function(err, recipes) {
+    Job.find(function(err, job) {
       if (err) return res.status(500).send(err);
 
-      return res.send(recipes);
+      return res.send(job);
     });
   })
   .post(function(req, res) {
-    Job.create(req.body, function(err, recipe) {
+    Job.create(req.body, function(err, job) {
       if (err) return res.status(500).send(err);
 
       return res.send(job);
@@ -20,7 +20,7 @@ router.route('/')
 
 router.route('/:id')
   .get(function(req, res) {
-    Job.findById(req.params.id, function(err, recipe) {
+    Job.findById(req.params.id, function(err, job) {
       if (err) return res.status(500).send(err);
 
       return res.send(job);

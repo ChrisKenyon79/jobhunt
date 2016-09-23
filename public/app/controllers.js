@@ -9,7 +9,7 @@ angular.module('JobCtrls', ['JobServices'])
   });
 
   $scope.deleteJob = function(id, jobIdx) {
-    Recipe.delete({ id: id }, function success(data) {
+    Job.delete({ id: id }, function success(data) {
       $scope.job.splice(jobIdx, 1);
     }, function error(data) {
       console.log(data);
@@ -17,7 +17,7 @@ angular.module('JobCtrls', ['JobServices'])
   };
 }])
 .controller('ShowCtrl', ['$scope', '$stateParams', 'job', function($scope, $stateParams, Job) {
-  $scope.recipe = {};
+  $scope.job = {};
 
   Job.get({ id: $stateParams.id }, function success(data) {
     $scope.job = data;

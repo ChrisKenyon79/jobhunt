@@ -21,7 +21,7 @@ app.config([
     templateUrl: 'app/views/newJob.html',
     controller: 'NewCtrl'
   })
-  .state('recipeJob', {
+  .state('showJob', {
     url: '/job/:id',
     templateUrl: 'app/views/showJob.html',
     controller: 'ShowCtrl'
